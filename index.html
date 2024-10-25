@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            overflow: hidden;
+            position: relative;
+        }
+        h1{
+            padding: 0;
+            font-family: "Teko" , sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+            color: white;
+            text-align: center;
+            font-size: 96px;
+            margin-bottom: 0;
+            margin-top: 10px;
+            background: linear-gradient(90deg , #ffd000 , #00ff9d);
+            -webkit-background-clip: text;
+            background-clip: text;
+           -webkit-text-fill-color: transparent;
+        }
+         .btn img{
+            width: 250px;
+            background-position: center;
+            clip-path: circle(37%);
+            cursor: pointer;
+            animation: spin 5s linear infinite;
+        }
+        @keyframes spin {
+            from {transform: rotate(0deg);}
+            to   {transform: rotate(360deg)}
+        }
+        .nav{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white; 
+        }
+        .count{
+            font-size: 38px;
+            margin-top: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .nav p{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin-top: 10px;
+            font-size: 20px;
+            color: aqua;
+        }
+        .nav .count{
+            margin-bottom: 0;
+            font-size: 58px;
+            color: gold;
+            font-family: "Teko" , sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+        }
+        .nav p:nth-child(3){
+            margin-top: 0;
+        }
+        .nav span{
+            margin-left: 10px;
+            margin-top: 0;
+            color: gold;
+            font-size: 25px;
+            font-family: "Teko" , sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+        }
+        .info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .info p{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin-top: 10px;
+            font-size: 20px;
+            color: gold;
+        }
+        .avatar{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .s-class{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .name{
+            position: absolute;
+            font-size: 30px;
+            font-family: 'Times New Roman', Times, serif;
+            font-optical-sizing: auto;
+            font-weight: bolder;
+            font-style: normal;
+            background: linear-gradient(90deg , #cae003 , #5eff00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            top: 30px;
+            left: 0;
+        }
+        #lil{
+            cursor: pointer;
+            background-color: #212121;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body class="nn">
+    <div class="info">
+        <div class="s_class">
+            <p class="name">player : user662<span></span></p>
+        </div>
+      </div>
+    <div class="nav">
+        <h1>TON CLICKER</h1>
+        <p>Click to the TON</p>
+        <p><span class="count">0</span></p>
+        <div onclick="boss()" class="btn"><img src="https://cdn-icons-png.freepik.com/512/12533/12533956.png" alt=""></div>
+        <p id="lop">RANK:<span id="rank">NONE</span></p>
+    </div>
+    
+    <script>
+        let big = document.querySelector('html')
+        let count = document.querySelector('.count');
+        let sum = 0;
+        let level = document.querySelector('#rank');
+const boss = () => {
+    let coinsToAdd = 1;
+    level.textContent = 'Beginer';
+    
+    if (sum >= 50 && sum < 150) {
+        coinsToAdd = 3;
+        level.textContent = 'Pro';
+    }
+    else if (sum >= 150 && sum < 300) {
+        coinsToAdd = 5;
+        level.textContent = 'The Best';
+    }
+    else if (sum >= 300 && sum < 500) {
+        coinsToAdd = 8;
+        level.textContent = 'Anonymus';
+    }
+    else if (sum >= 500 && sum < 1000) {
+        coinsToAdd = 14;
+        level.textContent = 'Hyper';
+    }
+    else if (sum >= 1000 && sum < 2000) {
+        coinsToAdd = 16;
+        level.textContent = 'Cyber Clicker';
+
+    }
+    else if (sum >= 2000 && sum < 3000) {
+        coinsToAdd = 21;
+        level.textContent = 'Third Chempion';
+    }
+    else if (sum >= 3000 && sum < 4000) {
+        coinsToAdd = 26;
+        level.textContent = 'Second Chempion';
+    }
+    else if (sum >= 4000 && sum < 10000) {
+        coinsToAdd = 77;
+        level.textContent = 'First Chempion';
+    }
+    else if (sum >= 10000 && sum < 15000) {
+        coinsToAdd = 630;
+        level.textContent = 'Legendary';
+    }
+    else if (sum >= 15000 && sum <25000) {
+        coinsToAdd = 1000;
+        level.textContent = 'God of Clicker';
+    }
+    else if (sum >= 25000 && sum < 50000) {
+        coinsToAdd = 1500;
+        level.textContent = 'The One';
+    }
+    else if (sum >= 50000 && sum < 100000) {
+        coinsToAdd = 2000;
+        level.textContent = 'The Bestest';
+    }
+    else if (sum >= 100000 && sum < 200000) {
+        coinsToAdd = 2500;
+        level.textContent = 'The Ultimate';
+    }
+    else if (sum >= 200000 && sum < 500000) {
+        coinsToAdd = 3000;
+        level.textContent = 'The Most Expert';
+    }
+    else if (sum >= 500000 && sum < 1000000) {
+        coinsToAdd = 5000;
+        level.textContent = 'The God of Clicker';
+    }
+    else if (sum >= 1000000 && sum < 2000000) {
+        coinsToAdd = 10000;
+        level.textContent = 'The Ultimate God of Clicker';
+    }
+    else if (sum >= 2000000 && sum < 5000000) {
+        coinsToAdd = 20000;
+        level.textContent = 'The Ultimate Ultimate God of Clicker';
+    }
+    else if (sum >= 5000000 && sum < 10000000) {
+        coinsToAdd = 50000;
+        level.textContent = 'The Third Terminator of Clicker';
+    }
+    else if (sum >= 10000000 && sum < 20000000) {
+        coinsToAdd = 100000;
+        level.textContent = 'The Second Terminator of Clicker';
+    }
+    else if (sum >= 20000000 && sum < 50000000) {
+        coinsToAdd = 200000;
+        level.textContent = 'The First Terminator of Clicker';
+    }
+    else if (sum >= 50000000 && sum < 100000000) {
+        coinsToAdd = 500000;
+        level.textContent = 'The Legendary Terminator of Clicker';
+    }
+    else if (sum >= 100000000 && sum < 200000000) {
+        coinsToAdd = 1000000;
+        level.textContent = 'The Ultimate Legendary Terminator of Clicker';
+    }
+    else if (sum >= 200000000 && sum < 500000000) {
+        coinsToAdd = 2000000;
+        level.textContent = 'The Ultimate Ultimate Legendary Terminator of Clicker';
+    }
+    else if (sum >= 500000000 && sum < 3000000000) {
+        coinsToAdd = 5000000;
+        level.textContent = 'The Best Hacker of Clicker';
+    }
+    // else if (sum >= 3000000000){
+    //     finaly.textContent = 'You are FINISHED This Clicker Game!';
+    //     finaly.style.backgroundColor = 'green';
+    //     finaly.style.color = 'white';
+    //     finaly.style.fontSize = '50px';
+    //     finaly.style.textAlign = 'center';
+    // }
+    sum += coinsToAdd;
+    count.textContent = sum;
+}
+
+    </script>
+</body>
+</html>
+
+
